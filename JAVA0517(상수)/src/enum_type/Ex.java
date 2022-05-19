@@ -45,11 +45,65 @@ public class Ex {
 		// 그러나, 해당 데이터를 사용하기 위한 시점에는 문제가 발생할 수 있음.
 		// => 따라서, 별도로 해당 범위 내의 데이터인지 판별하여 추가적인 작업을 수행해야 함!
 		
+		System.out.println("===========================================");
 		
+		// 열거타입 변수 today 선언 및 초기화 후 호출
+		EnumWeek today = EnumWeek.FRIDAY;
+		System.out.println(today);
 		
+		// 열거 타입을 활용하는 클래스 사용
+		GoodWeek gw = new GoodWeek();
+		gw.setMyWeek(today);
+		System.out.println("오늘의 요일 : " + gw.getMyWeek());
+		
+		gw.setMyWeek(EnumWeek.THURSDAY);
+		System.out.println("오늘의 요일 : " + gw.getMyWeek());
+		
+		// EunmWeek 타입 객체는 Enum 클래스의 서브 클래스 타입 객체입니까?
+		if(today instanceof Enum) {
+			System.out.println("Enum 클래스의 서브클래스이다!");
+		} else {
+			System.out.println("Enum 클래스의 서브클래스가 아니다!");
+		}
+		
+		if(today instanceof Object) {
+			System.out.println("Object 클래스의 서브클래스이다!");
+		} else {
+			System.out.println("Object 클래스의 서브클래스가 아니다!");
+		}
+		
+		// 열거 타입 사용 시 장점
+		// => 정의 시 지정된 상수 외의 다른값은 절대 전달 불가능!
+//		gw.setMyWeek(5);
+//		gw.setMyWeek("MONDAY");
+		// => 반드시 열거타입명.상수명으로 지정된 값만 전달 해야 한다!
+		gw.setMyWeek(EnumWeek.SATURDAY);
 
 	}
 
+}
+
+//열거타입 정의
+enum EnumWeek {
+	// 열거형 정의 시 중괄호 내에는 값을 갖는 상수 이름만 나열함(별도의 값을 지정하지 않음!)
+	MONDAY, TUSEDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+enum EnumMonth { FEBRUARY
+}
+
+// 열거타입을 사용하는 클래스
+class GoodWeek {
+	// 클래스 내에서 열거타입 변수 선언 가능(로컬변수도 가능)
+	EnumWeek myWeek;
+
+	public EnumWeek getMyWeek() {
+		return myWeek;
+	}
+
+	public void setMyWeek(EnumWeek myWeek) {
+		this.myWeek = myWeek;
+	}
 }
 
 // 요일 정보를 관리하는 WeekClass 클래스 정의
@@ -61,10 +115,10 @@ class BadWeek {
 	//    클래스명만으로 접근이 가능하여 접근이 쉬움. 또한, 값 변경이 불가능하여 안전함.
 	public static final int WEEK_MONDAY = 0;
 	public static final int WEEK_TUSEDAY = 1;
-	public static final int WEEK_WEDNSEDAY = 2;
-	public static final int WEEK_TUHRSDAY = 3;
+	public static final int WEEK_WEDNESDAY = 2;
+	public static final int WEEK_THURSDAY = 3;
 	public static final int WEEK_FRIDAY = 4;
-	public static final int WEEK_STATURDAY = 5;
+	public static final int WEEK_SATURDAY = 5;
 	public static final int WEEK_SUNDAY = 6;
 	
 	private int myWeek;
@@ -87,11 +141,28 @@ class BadWeek {
 	}
 }
 
+
 class WeekClass {
-//	public static final int WEEK_MONDAY = 0;
+	public static final int WEEK_MONDAY = 0;
 	
 	// 상수를 호출 할 때마다 새 인스턴스를 생성하여 사용
-	public static final WeekClass WEEK_MONDAY = new WeekClass();
+//	public static final WeekClass WEEK_MONDAY = new WeekClass();
+}
+
+class MonthClass {
+	public static final int JANUARY = 0;
+//	public static final MonthClass JANUARY = new MonthClass();
+}
+
+class MyCalendar {
+	// setMonth() 메서드 파라미터로 int 타입을 전달받을 경우
+	// MonthClass.JANUARY 값과 WeekClass.WEEK_MONDAY 의 값이 동일한데
+	// WeekClass.WEEK_MONDAY 를 전달하면 문법적으로는 잘못되지 않았으나
+	// 정상적인 값이라고도 볼 수 없다!
+	// 하지만, 외부에서 전달하는 값에 대한 제한을 할 수 없다! (일반 상수 문제점)
+	public void setMonth(int month) {
+		System.out.println(month + "월");
+	}
 }
 
 
