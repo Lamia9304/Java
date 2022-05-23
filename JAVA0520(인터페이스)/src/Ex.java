@@ -69,6 +69,7 @@ public class Ex {
 		//    = 다형성 활용 가능
 		
 		
+		
 		MyExInterface mi2 = new MySubClass(); // 업캐스팅
 		// 업캐스팅 이후에는 참조 영역이 축소되므로 상속된 메서드만 호출 가능
 		// => 인터페이스의 추상메서드를 모두 오버라이딩 했기 때문에
@@ -137,6 +138,9 @@ class MySubClass implements MyExInterface {
 	}
 	
 }
+
+
+
 
 abstract class MyClass {
 	// 멤버변수
