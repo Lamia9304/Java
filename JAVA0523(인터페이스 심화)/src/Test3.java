@@ -6,7 +6,35 @@ public class Test3 {
 	p.draw(new Circle());
 	p.draw(new Rectangle());
 	
+	System.out.println("=====================");
 	
+	Car car=new Taxi();
+	car.speedUp();
+	car.speedDown();
+//	car.lift(); //참조 영역 축소로 호출 불가!
+//	car.drop(); //참조 영역 축소로 호출 불가!
+	
+	//다운캐스팅을 통해 Taxi 타입으로 변환 후에는 lift(), drop() 호출 가능!
+    if(car instanceof Taxi) {
+    	Taxi taxi=(Taxi)car; // 다운캐스팅
+    	taxi.lift();
+    	taxi.drop();
+    }
+    
+    
+    System.out.println("-----------------------");
+    
+    car=new Truck();
+    car.speedUp();
+    car.speedDown();
+//   car.dump(); //참조 영역 축소로 인해서 호출 불가!
+    
+    if(car instanceof Truck) {
+    	Truck truck=(Truck)car;
+    	truck.dump();
+    }
+    
+    
 }
  
  
@@ -51,7 +79,7 @@ class Circle implements Shape{
 
 	
 	
-	double radius;
+	double radius=3.0;
 	@Override
 	public void draw() {
 		System.out.println("원 그리기! -반지름: "+radius);
@@ -72,7 +100,8 @@ class Circle implements Shape{
 
 class Rectangle implements Shape{
 	
-	private double width,height;
+	private double width=2.0;
+	private double height=2.0;
 	
 
 	public void setWidth(double width) {
@@ -104,6 +133,56 @@ class Photoshop{
 	
 	
 }
+
+
+
+// ----------------------------------------------------
+
+interface Car{
+	public abstract void speedUp();
+	public abstract void speedDown();
+}
+
+class Taxi implements Car{
+
+	@Override
+	public void speedUp() {
+		System.out.println("Taxi 속력 증가!");
+	}
+
+	@Override
+	public void speedDown() {
+		System.out.println("Taxi 속력 감소!");
+	}
+	
+	public void lift() {
+		System.out.println("Taxi 승객 탑승!");
+	}
+	
+	public void drop() {
+		System.out.println("Taxi 승객 하차!");
+	}
+}
+
+class Truck implements Car{
+
+	@Override
+	public void speedUp() {
+		System.out.println("Truck 속력 증가!");
+	}
+
+	@Override
+	public void speedDown() {
+		System.out.println("Truck 속력 감소!");
+	}
+	
+	public void dump() {
+		System.out.println("덤프!");
+	}
+}
+
+
+
 
 
 
