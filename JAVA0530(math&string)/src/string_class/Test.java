@@ -44,7 +44,35 @@ public class Test {
 		
 		System.out.println("=======================================");
 		
+		
+		String address="Address: 부산광역시 부산진구 동천로 109 삼한 골든게이트";
+		System.out.println("주소: "+ address.substring(address.indexOf('부')));
+		
+		
+		
+		String address2= "Address: 부산광역시 부산진구 동천로 109, Floor: 7층, Tel: 051-803-0909";
+		
+		String arr[]= address2.split(",");
+		
+		for(int i=0; i<arr.length;i++) {
+			String[]strArr2=arr[i].split(":");
+			System.out.println(strArr2[i]);
+			// => 분리된 문자열의 1번 인덱스가 실제 데이터이므로
+			System.out.println(strArr2[1]);
+			System.out.println(arr[i].split(":")[1]);
+		}
+		
+		
+		
+		
+		
+		
 
 	}
+	
+	
+	
+	
+	
 
 }
