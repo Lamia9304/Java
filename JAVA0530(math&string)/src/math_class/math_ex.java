@@ -1,6 +1,6 @@
 package math_class;
 
-public class Ex {
+public class math_ex {
 
 	public static void main(String[] args) {
 		/*
