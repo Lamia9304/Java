@@ -2,7 +2,7 @@ package java_util_package;
 
 import java.util.Random;
 
-public class Ex {
+public class Random_ex {
 
 	public static void main(String[] args) {
 		/*

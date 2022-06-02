@@ -2,7 +2,7 @@ package java_util_package;
 
 import java.util.Date;
 
-public class Ex2 {
+public class Date_ex {
 
 	public static void main(String[] args) {
 		/*
@@ -41,6 +41,7 @@ public class Ex2 {
 		} else {
 			System.out.println("오늘입니다!");
 		}
+		
 		
 	}
 
