@@ -12,7 +12,7 @@ public class FindAndReplaceExample {
 			
 		}else {
 			System.out.println("자바 문자열이 포함되어 있습니다.");
-			str.replaceAll("자바", "JAVA");
+			str.replace("자바", "JAVA");
 			System.out.println("-->" +str);
 		}
 	}
