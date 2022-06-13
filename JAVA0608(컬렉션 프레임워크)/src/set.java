@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Ex {
+public class set {
 	
 	
 	public static void main(String[] args) {
