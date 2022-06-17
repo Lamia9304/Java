@@ -22,6 +22,8 @@ public class Test {
 		
 		char []arr=str.toCharArray();
 		
+		System.out.println(arr);
+		
 		
 		
 		
