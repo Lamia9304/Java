@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="JAVA0502/src"/>
+	<classpathentry kind="src" path="JAVA0503(형변환)/src"/>
+	<classpathentry kind="src" path="JAVA0509(다형성)/src"/>
+	<classpathentry kind="src" path="JAVA0510(다형성 예제)/src"/>
+	<classpathentry kind="src" path="JAVA0512(추상클래스)/src"/>
+	<classpathentry kind="src" path="JAVA0517(상수)/src"/>
+	<classpathentry kind="src" path="JAVA0520(인터페이스)/src"/>
+	<classpathentry kind="src" path="JAVA0523(인터페이스 심화)/src"/>
+	<classpathentry kind="src" path="JAVA0524(Object 클래스)/src"/>
+	<classpathentry kind="src" path="JAVA0526(Object-toString)/src"/>
+	<classpathentry kind="src" path="JAVA0530(math&amp;string)/src"/>
+	<classpathentry kind="src" path="JAVA0531/src"/>
+	<classpathentry kind="src" path="JAVA0602(java.time)/src"/>
+	<classpathentry kind="src" path="JAVA0607(Test)/src"/>
+	<classpathentry kind="src" path="JAVA0608(컬렉션 프레임워크)/src"/>
+	<classpathentry kind="src" path="JAVA0613(컬렉션 프레임워크2-List,Map)/src"/>
+	<classpathentry kind="src" path="JAVA0614(제네릭)/src"/>
+	<classpathentry kind="src" path="JAVA0616(예외)/src"/>
+	<classpathentry kind="src" path="JAVA0617(Scanner)/src"/>
+	<classpathentry kind="src" path="Test(0617)/src"/>
+	<classpathentry kind="output" path="JAVA0523(인터페이스 심화)/bin"/>
+</classpath>
